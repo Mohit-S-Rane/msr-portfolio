@@ -10,6 +10,7 @@ body {
     height: 100vh;
     font-family: "Neue Montreal";
     margin-top: 0.1px;
+    /* position: fixed; */
     /* overflow-x: hidden; */
 }
 

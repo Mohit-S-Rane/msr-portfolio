@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
   cards.forEach((card) => {
     ScrollTrigger.create({
       trigger: "card.id",
-      start: "top top",
+      start: "top+=832 top",
       end: "+=1200vh",
       scrub: 1,
       onUpdate: (self) => {
