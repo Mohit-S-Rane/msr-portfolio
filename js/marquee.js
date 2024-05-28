@@ -21,14 +21,47 @@ const handleScroll = () => {
   // Determine if the user is scrolling down
   if (newScroll > currentScroll) {
     if (!isScrollingDown) {
-      // console.log('scrolling down');
       isScrollingDown = true;
       gsap.to(marqueeTween, { timeScale: 1 }); // Set marquee speed and direction
       arrows.forEach((arrow) => arrow.classList.remove("active")); // Update arrow classes
     }
   } else {
     if (isScrollingDown) {
-      // console.log('scrolling up');
+      isScrollingDown = false;
+      gsap.to(marqueeTween, { timeScale: -1 }); // Reverse marquee direction
+      arrows.forEach((arrow) => arrow.classList.add("active")); // Update arrow classes
+    }
+  }
+
+  currentScroll = newScroll; // Update the current scroll position
+};
+
+// Touch event handler function for touch devices
+let touchStartY = 0;
+let touchEndY = 0;
+
+const handleTouchStart = (event) => {
+  touchStartY = event.touches[0].clientY;
+};
+
+const handleTouchMove = (event) => {
+  touchEndY = event.touches[0].clientY;
+  const touchScroll = currentScroll - (touchStartY - touchEndY);
+  window.scrollTo(0, touchScroll);
+};
+
+const handleTouchEnd = () => {
+  const newScroll = window.scrollY;
+
+  // Determine if the user is scrolling down
+  if (touchEndY < touchStartY) {
+    if (!isScrollingDown) {
+      isScrollingDown = true;
+      gsap.to(marqueeTween, { timeScale: 1 }); // Set marquee speed and direction
+      arrows.forEach((arrow) => arrow.classList.remove("active")); // Update arrow classes
+    }
+  } else {
+    if (isScrollingDown) {
       isScrollingDown = false;
       gsap.to(marqueeTween, { timeScale: -1 }); // Reverse marquee direction
       arrows.forEach((arrow) => arrow.classList.add("active")); // Update arrow classes
@@ -40,3 +73,8 @@ const handleScroll = () => {
 
 // Attach the scroll event listener
 window.addEventListener("scroll", handleScroll);
+
+// Attach touch event listeners
+window.addEventListener("touchstart", handleTouchStart);
+window.addEventListener("touchmove", handleTouchMove);
+window.addEventListener("touchend", handleTouchEnd);
