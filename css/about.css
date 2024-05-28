@@ -940,3 +940,116 @@ footer .footer-links a {
   --link-color: #e4e3db;
   --overlay-bg: #000;
 }
+
+@media (max-width: 600px) {
+  .hero .hero-img {
+    width: 100%;
+  }
+
+  .hero .hero-header {
+    padding-top: 30vh;
+  }
+
+  .partners h4 {
+    text-align: center;
+    text-decoration: underline;
+    margin: 2em;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+  }
+
+  .block {
+    flex: 1;
+    height: 100%;
+    /* background: black; */
+    background: #d4ff3f;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    margin-right: -2px;
+  }
+
+  .overlay-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #0f0f0f;
+    padding: 10em 0em;
+  }
+
+  .menu-item,
+  .menu-title {
+    flex: 1;
+    width: 100%;
+    opacity: 0;
+  }
+
+  .menu-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+  }
+
+  .menu-item {
+    display: flex;
+    padding: 1em;
+    transition: 0.3s;
+    /* cursor: pointer; */
+  }
+
+  .menu-item-year {
+    /* flex: 1; */
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+
+  .menu-item-link {
+    /* flex: 1; */
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+  }
+
+  .menu-item-year p {
+    opacity: 0.8;
+  }
+
+  .menu-item-name {
+    flex: 3;
+    display: flex;
+    align-items: center;
+  }
+
+  .menu-item-name p {
+    /* font-family: "PP Formula"; */
+    font-size: 10vw;
+    text-align: center;
+    font-family: "Space Mono";
+    text-transform: uppercase;
+    opacity: 1;
+    font-weight: 600;
+  }
+
+  .menu-item-link {
+    text-align: right;
+  }
+
+  .menu-item-link a {
+    color: black;
+  }
+}

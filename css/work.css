@@ -110,21 +110,7 @@ img {
     color: #fff;
 }
 
-@media (max-width: 900px) {
-    .items {
-        width: 100%;
-    }
 
-    .filters {
-        z-index: 2;
-    }
-
-    .filter {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.25);
-    }
-}
 
 
 .site-content-3 {
@@ -355,5 +341,48 @@ nav>div {
 
     .website-content .header {
         width: 300px;
+    }
+
+    .items {
+        width: 100%;
+    }
+
+    .filters {
+        z-index: 2;
+    }
+
+    .filter {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .filter h1 span {
+        position: relative;
+        text-transform: uppercase;
+        font-size: 3rem;
+        color: #fff;
+        line-height: 80%;
+        transition: color 0.3s;
+    }
+
+    .filters {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 50vw;
+        height: 100vh;
+        padding: 2em 2em 8em 2em;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding: 1em 0em 0em 1em;
+    
+    }
+
+    .item-img {
+        width: 100%;
+        height: 100%;
     }
 }
