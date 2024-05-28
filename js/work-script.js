@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const itemElement = document.createElement("div");
       itemElement.className = "item";
       itemElement.innerHTML = `
-           <div class="item-img">
+           <div class="item-img" onclick="location.href='${item.link}';" style="cursor: pointer;">
               <img src="${item.img}" alt="">
            </div>
            <div class="item-copy"><p>${item.title}</p></div>
